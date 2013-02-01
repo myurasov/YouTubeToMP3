@@ -1,0 +1,18 @@
+{% extends "include/layout.twig" %}
+
+{% block title %}Recent Videos{% endblock %}
+
+{% block content %}
+  <h1 class="pageTitle">Recent Videos</h1>
+
+  {% for item in recent %}
+    {% include "include/stats-result.twig" %}
+    {% if not loop.last %}
+      <div class="statsSeparator"></div>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
+{% block footerNavRecent %}
+<span class="location">Recent</span>
+{% endblock %}

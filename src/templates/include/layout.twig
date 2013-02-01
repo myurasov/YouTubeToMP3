@@ -1,0 +1,104 @@
+{% if enableFrontend %}
+  {% spaceless %}
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+  <html>
+    <head>
+      <title>{% block title %}YouTube to MP3 converter{% endblock %} - tomp3.org</title>
+      <meta name="description" content="Convert YouTube videos to MP3 files online for free!">
+      <meta name="keywords" content="youtube,mp3,convert,music,video,converter,free,online">
+
+      {% if constant('ymF\\DEVELOPMENT') %}
+        <link rel="stylesheet/less" type="text/css" href="/_design/less/tomp3.org.less">
+        <script type="text/javascript" src="http://projects.local/_libraries/js/less-1.0.41.min.js"></script>
+        <script src="http://projects.local/_libraries/js/jquery-1.5.1.js" type="text/javascript"></script>
+      {% else %}
+        <link rel="stylesheet" type="text/css" href="/resources/tomp3.org.css?9">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
+      {% endif %}
+
+      <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+      <script type="text/javascript" src="/resources/tomp3.org.js?2"></script>
+      <script type="text/javascript" src="/resources/tomp3.org.utils.js"></script>
+
+      <!--[if lt IE 7]>
+        <link rel="stylesheet" type="text/css" href="/resources/tomp3.org.ie6.css">
+      <![endif]-->
+
+    </head>
+    <body>
+      <table id="tableLayout" cellpadding="0" cellspacing="0" align="center">
+        <tr>
+          <td>
+            <table id="tableStructure" cellpadding="0" cellspacing="0">
+              <tr>
+                <td id="cellLogo">
+                  <a href="/">
+                    <img src="/images/pixel.gif" alt="tomp3.org">
+                  </a>
+                </td>
+                <td id="cellHeader">
+                  <h1>Convert YouTube videos to MP3 files.<br><span class="highlight">Easy as 1-2-3!</span></h1>
+                </td>
+              </tr>
+              <tr><td colspan="2" class="cellStructureSep"><div class="line"><img src="/images/pixel.gif" alt=""></div></td></tr>
+              <tr>
+                <td colspan="2" id="cellContent">
+                {% block content %}
+                  (content)
+                {% endblock %}
+                </td>
+              </tr>
+              <tr><td colspan="2" class="cellStructureSep"><div class="line"><img src="/images/pixel.gif" alt=""></div></td></tr>
+              <tr>
+                <td colspan="2" id="cellFooter">
+                  {% block footerNavHome %}
+                    <a href="/">Home</a>
+                  {% endblock %}
+                  <span class="sep">|</span>
+                  {% block footerNavTop %}
+                    <a href="/top/">Top</a>
+                  {% endblock %}
+                  <span class="sep">|</span>
+                  {% block footerNavRecent %}
+                    <a href="/recent/">Recent</a>
+                  {% endblock %}
+                    <span class="sep">|</span>
+                  {% block footerNavTerms %}
+                    <a href="/terms/">Terms of Service</a>
+                  {% endblock %}
+                  <span class="sep">|</span>
+                  {% block footerNavForum %}
+                    <a href="/forum/">Forum</a>
+                  {% endblock %}
+                  <span class="sep">|</span>
+                    <a href="http://softplatz.net">Free Software Downloads</a>
+                  {#<span class="sep">|</span>
+                  {% include 'include/addthis-small.twig' %#}
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" id="cellCopyright">
+                  {% set _yearNow = 'now' | date('Y') %}
+
+                  {% if _yearNow > 2011 %}
+                    &copy; 2011&ndash;{{ _yearNow }} tomp3.org
+                  {% else %}
+                    &copy; 2011 tomp3.org
+                  {% endif %}
+
+                  - ver. {{ constant('ymF\\PROJECT_VERSION') }}
+
+                  {% if constant('ymF\\DEVELOPMENT') %}
+                  (DEVELOPMENT MODE)
+                  {% endif %}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      {% include 'include/google-analytics.twig' %}
+    </body>
+  </html>
+  {% endspaceless %}
+{% endif %}

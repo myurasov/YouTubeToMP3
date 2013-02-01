@@ -1,0 +1,7 @@
+.DS_Store
+_design/
+_doc/
+_misc/
+_dev/
+/data/
+*.Config.php

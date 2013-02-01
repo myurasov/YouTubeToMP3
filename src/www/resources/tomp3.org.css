@@ -1,0 +1,595 @@
+/*
+   tomp3.org stylesheet
+*/
+.tableRF {
+  border-width: 0;
+}
+.tableRF .a,
+.tableRF .c,
+.tableRF .g,
+.tableRF .i {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+  background-image: url(/images/rounded-5px.png);
+}
+.tableRF .a {
+  background-position: 0px 0px;
+}
+.tableRF .c {
+  background-position: -5px 0px;
+}
+.tableRF .g {
+  background-position: 0px -5px;
+}
+.tableRF .i {
+  background-position: -5px -5px;
+}
+.tableRF .b,
+.tableRF .d,
+.tableRF .f,
+.tableRF .h {
+  border-style: solid;
+  border-color: #c7c7c7;
+  background-color: white;
+}
+.tableRF .b {
+  border-width: 2px 0px 0px 0px;
+}
+.tableRF .d {
+  border-width: 0px 0px 0px 2px;
+}
+.tableRF .f {
+  border-width: 0px 2px 0px 0px;
+}
+.tableRF .h {
+  border-width: 0px 0px 2px 0px;
+}
+.tableRF .e {
+  background-color: white;
+}
+body {
+  margin: 0;
+  padding: 5px 0px 10px 0px;
+  background-color: #fbfbfb;
+  background-image: url(/images/texture.png);
+}
+body,
+td,
+tr,
+li,
+ul,
+input,
+textarea {
+  font-family: "Lucida Grande", Verdana, sans-serif;
+  font-size: 10pt;
+  color: #7f7f7f;
+}
+.inputText {
+  border: none;
+  padding: 2px;
+  margin: 0;
+  color: #3f3f3f;
+  background-color: white;
+  outline-style: none;
+}
+a {
+  color: #608dc4;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+img {
+  border: none;
+}
+#tableLayout {
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#tableStructure {
+  width: 728px;
+}
+#tableStructure .cellStructureSep {
+  vertical-align: middle;
+  height: 61px;
+}
+#tableStructure .cellStructureSep .line {
+  background-image: url(/images/line.png);
+  height: 1px;
+  width: 728px;
+}
+#cellLogo {
+  background-repeat: no-repeat;
+  background-image: url(/images/logo.png);
+  background-position: 0px 0px;
+}
+#cellLogo img {
+  width: 215px;
+  height: 75px;
+}
+#cellHeader h1 {
+  font-size: 12pt;
+  text-align: center;
+  white-space: nowrap;
+  width: 513px;
+  font-weight: normal;
+}
+#cellHeader h1 .highlight {
+  color: #ff6f6f;
+}
+#cellContent {
+  vertical-align: top;
+}
+#cellFooter {
+  padding-top: 0px;
+  text-align: center;
+  font-size: 9pt;
+}
+#cellFooter .sep {
+  color: #bfbfbf;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+#cellCopyright {
+  text-align: center;
+  font-size: 8pt;
+  padding-top: 15px;
+  color: #a5a5a5;
+}
+#tableMainForm .cellBullet {
+  width: 25px;
+  height: 30px;
+  background-image: url(/images/bullets.png);
+  background-repeat: no-repeat;
+}
+#tableMainForm .cellBullet1 {
+  width: 25px;
+  height: 30px;
+  background-image: url(/images/bullets.png);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+#tableMainForm .cellBullet2 {
+  width: 25px;
+  height: 30px;
+  background-image: url(/images/bullets.png);
+  background-repeat: no-repeat;
+  background-position: -25px 0px;
+}
+#tableMainForm .cellBullet3 {
+  width: 25px;
+  height: 30px;
+  background-image: url(/images/bullets.png);
+  background-repeat: no-repeat;
+  background-position: -50px 0px;
+}
+#tableMainForm .cellField {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+#tableMainForm .cellField .title {
+  font-size: 11pt;
+  padding-bottom: 25px;
+  padding-top: 5px;
+}
+#tableMainForm .cellField .comment {
+  padding-top: 20px;
+}
+#tableMainForm .cellSeparator {
+  height: 35px;
+}
+#tableMainForm .cellField1 {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+#tableMainForm .cellField1 .title {
+  font-size: 11pt;
+  padding-bottom: 25px;
+  padding-top: 5px;
+}
+#tableMainForm .cellField1 .comment {
+  padding-top: 20px;
+}
+#tableMainForm .cellField1 .example {
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
+  display: inline-block;
+  cursor: pointer;
+}
+#tableMainForm .cellField2, #tableMainForm .cellField3 {
+  padding-left: 30px;
+  padding-right: 50px;
+}
+#tableMainForm .cellField2 .title, #tableMainForm .cellField3 .title {
+  font-size: 11pt;
+  padding-bottom: 25px;
+  padding-top: 5px;
+}
+#tableMainForm .cellField2 .comment, #tableMainForm .cellField3 .comment {
+  padding-top: 20px;
+}
+#inputUrl {
+  width: 500px;
+}
+#selectQuality .qualitySelectPart {
+  background-image: url(/images/quality-select.png);
+  display: inline-block;
+  outline-style: none;
+  cursor: pointer;
+  height: 30px;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ffffff;
+  color: #929292;
+  overflow: hidden;
+}
+#selectQuality .qualitySelectPart span {
+  margin-top: 7px;
+  display: inline-block;
+}
+#selectQuality .selected {
+  color: white;
+  text-shadow: none;
+}
+#selectQuality .hover {
+  color: #9f9f9f;
+}
+#selectQuality #selectQualityA {
+  background-image: url(/images/quality-select.png);
+  display: inline-block;
+  outline-style: none;
+  cursor: pointer;
+  height: 30px;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ffffff;
+  color: #929292;
+  overflow: hidden;
+  width: 83px;
+}
+#selectQuality #selectQualityA span {
+  margin-top: 7px;
+  display: inline-block;
+}
+#selectQuality #selectQualityB {
+  background-image: url(/images/quality-select.png);
+  display: inline-block;
+  outline-style: none;
+  cursor: pointer;
+  height: 30px;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ffffff;
+  color: #929292;
+  overflow: hidden;
+  width: 81px;
+}
+#selectQuality #selectQualityB span {
+  margin-top: 7px;
+  display: inline-block;
+}
+#selectQuality #selectQualityC {
+  background-image: url(/images/quality-select.png);
+  display: inline-block;
+  outline-style: none;
+  cursor: pointer;
+  height: 30px;
+  text-align: center;
+  font-size: 10pt;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ffffff;
+  color: #929292;
+  overflow: hidden;
+  width: 82px;
+}
+#selectQuality #selectQualityC span {
+  margin-top: 7px;
+  display: inline-block;
+}
+#selectQuality.low #selectQualityA {
+  color: white;
+  text-shadow: none;
+  background-position: 0px 0px;
+}
+#selectQuality.low #selectQualityA:hover {
+  background-position: -246px 0px;
+}
+#selectQuality.low #selectQualityB {
+  background-position: -83px 0px;
+}
+#selectQuality.low #selectQualityB:hover {
+  background-position: -329px 0px;
+  color: #9f9f9f;
+}
+#selectQuality.low #selectQualityC {
+  background-position: -164px -30px;
+}
+#selectQuality.low #selectQualityC:hover {
+  background-position: -410px 0px;
+  color: #9f9f9f;
+}
+#selectQuality.std #selectQualityA {
+  background-position: 0px -30px;
+}
+#selectQuality.std #selectQualityA:hover {
+  background-position: -246px -30px;
+  color: #9f9f9f;
+}
+#selectQuality.std #selectQualityB {
+  color: white;
+  text-shadow: none;
+  background-position: -83px -30px;
+}
+#selectQuality.std #selectQualityB:hover {
+  background-position: -329px -30px;
+}
+#selectQuality.std #selectQualityC {
+  background-position: -164px -30px;
+}
+#selectQuality.std #selectQualityC:hover {
+  background-position: -410px -30px;
+  color: #9f9f9f;
+}
+#selectQuality.high #selectQualityA {
+  background-position: 0px -60px;
+}
+#selectQuality.high #selectQualityA:hover {
+  background-position: -246px -60px;
+  color: #9f9f9f;
+}
+#selectQuality.high #selectQualityB {
+  background-position: -83px -60px;
+}
+#selectQuality.high #selectQualityB:hover {
+  background-position: -329px -60px;
+  color: #9f9f9f;
+}
+#selectQuality.high #selectQualityC {
+  color: white;
+  text-shadow: none;
+  background-position: -164px -60px;
+}
+#selectQuality.high #selectQualityC:hover {
+  background-position: -410px -60px;
+}
+.button {
+  width: 109px;
+  height: 30px;
+  background-image: url(/images/button-go.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  color: #7f95b1;
+  font-size: 10pt;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #f1fcff;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.button:hover {
+  background-position: 0px -30px;
+  color: #8fa2bb;
+}
+.button.pressed {
+  background-position: 0px -60px;
+}
+.button.pressed span {
+  margin-top: 8px;
+}
+.button.disabled {
+  background-position: 0px -90px;
+  color: #a5a5a5;
+  text-shadow: 0 1px 0 #f8f8f8;
+}
+.button span {
+  margin-top: 7px;
+  display: inline-block;
+}
+.hidden {
+  display: none;
+}
+.contentPage {
+  position: absolute;
+  width: 728px;
+}
+.conversionResult {
+  width: 608px;
+}
+.conversionResult.withNumber {
+  width: 648px;
+}
+.conversionResult .thumbnail {
+  width: 120px;
+  padding-right: 20px;
+}
+.conversionResult .thumbnail .top {
+  height: 18px;
+  background-image: url(/images/thumbnail-bg.png);
+}
+.conversionResult .thumbnail .content {
+  background-image: url(/images/thumbnail-empty-bg.gif);
+  width: 120px;
+  height: 90px;
+}
+.conversionResult .thumbnail .bottom {
+  height: 18px;
+  background-image: url(/images/thumbnail-bg.png);
+  background-position: 0px -18px;
+}
+.conversionResult .titleParent {
+  vertical-align: top;
+  height: 1em;
+}
+.conversionResult .title {
+  font-size: 11pt;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #727272;
+  vertical-align: top;
+  padding-right: 10px;
+}
+.conversionResult .info {
+  font-size: 9pt;
+  vertical-align: top;
+  color: #8c8c8c;
+  text-align: right;
+}
+.conversionResult .ad {
+  vertical-align: top;
+  padding-top: 19px;
+}
+.conversionResult .description {
+  vertical-align: middle;
+  height: 60px;
+  padding-top: 10px;
+  color: #999999;
+}
+.conversionResult .description div {
+  width: 468px;
+}
+.conversionResult .status {
+  vertical-align: bottom;
+  font-size: 10pt;
+  text-align: center;
+}
+.conversionResult .status img.ellipsis {
+  margin-left: 1px;
+}
+.conversionResult .status .result .sep {
+  padding: 0px 15px 0px 15px;
+  color: #d3d3d3;
+}
+.conversionResult .status .result .optionsLink {
+  border-bottom-style: dashed;
+  border-bottom-width: 1px;
+  border-bottom-color: #608dc4;
+  display: inline-block;
+  cursor: pointer;
+  color: #608dc4;
+}
+.conversionResult .status .error {
+  color: #ff6f6f;
+}
+.conversionResult .number {
+  vertical-align: middle;
+  width: 40px;
+  text-align: left;
+  font-size: 11pt;
+}
+.conversionResult .result a {
+  font-weight: bold;
+}
+.resultOptions .title {
+  z-index: 1;
+  display: inline-block;
+  position: absolute;
+  background-color: #f7fbff;
+  padding: 2px 10px 4px 10px;
+  border: 1px solid #d3e1f1;
+  border-bottom-color: #f7fbff;
+  border-bottom-width: 3px;
+  margin-top: -20px;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+}
+.resultOptions .title .text {
+  border-bottom: 1px dashed #608dc4;
+  color: #608dc4;
+  cursor: pointer;
+}
+.resultOptions .content {
+  background: #f7fbff;
+  position: absolute;
+  border: 1px solid #d3e1f1;
+  margin-top: 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+.resultOptions .content .padder {
+  padding: 15px;
+}
+#codeResultoptions .content td {
+  line-height: 2em;
+}
+#codeResultoptions .content .label {
+  text-align: right;
+  padding-right: 10px;
+  vertical-align: middle;
+  font-size: 9pt;
+  color: #999999;
+}
+#codeResultoptions .content .field {
+  vertical-align: middle;
+}
+#codeResultoptions .content .field input {
+  font-size: 9pt;
+  font-family: Monaco, Consolas, 'Lucida Console', monospace;
+  background-color: transparent;
+  outline-style: none;
+  border: none;
+  width: 400px;
+}
+.resultsOptionsPlaceholder {
+  margin-top: 5px;
+}
+#buttonBack {
+  margin-top: 30px;
+}
+.textSection {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5em;
+  font-size: 10pt;
+}
+li {
+  margin-top: 10px;
+  font-size: inherit;
+}
+h1 {
+  font-size: 12pt;
+}
+#cellFooter .addthis_toolbox {
+  display: inline-block;
+  height: 1em;
+}
+#shareResultOptions .addthis_toolbox {
+  display: inline-block;
+}
+.statsSeparator {
+  height: 2em;
+}
+.pageTitle {
+  font-size: 11pt;
+  font-weight: bold;
+  margin-left: 50px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+#disqus_thread {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#disqus_thread a {
+  font-size: 9pt;
+}
+#dsq-content h3 {
+  font-size: 10pt;
+}
+.dsq-brlink {
+  display: block;
+  text-align: center;
+}

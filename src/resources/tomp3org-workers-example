@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# tomp3.org workers start/stop
+#
+# Copy this file to /etc/init.d
+#
+# To add service : update-rc.d tomp3org-workers defaults
+# To remove service: update-rc.d -f tomp3org-workers remove
+# http://linuxhelp.blogspot.com/2006/04/enabling-and-disabling-services-during_01.html
+
+convertWorkers=4
+downloadLocalWorkers=4
+encodeLocalWorkers=4
+
+source /Projects/Web/tomp3.org/source/resources/workers-launcher

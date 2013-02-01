@@ -1,0 +1,64 @@
+#!/bin/bash
+
+dir="/Projects/Web/tomp3.org/src/cli/ConversionServer/workers"
+logdir="/Projects/Web/tomp3.org/data/logs/output"
+stopfile="/Projects/Web/tomp3.org/data/temp/workers-stop"
+
+function runConvertWorkers
+{
+	id=1
+	while [ $id -le $1 ]; do
+    while [ ! -f $stopfile ] ; do
+      php $dir/convert-worker.php id:$id 2>&1 >> $logdir/convert-worker.$id
+    done &
+    let id=id+1
+	done
+}
+
+function runDownloadLocalWorkers
+{
+	id=1
+	while [ $id -le $1 ]; do
+    while [ ! -f $stopfile ] ; do
+      php $dir/download-local-worker.php id:$id 2>&1 >> $logdir/download-local-worker.$id
+    done &
+    let id=id+1
+	done
+}
+
+function runEncodeLocalWorkers
+{
+	id=1
+	while [ $id -le $1 ]; do
+    while [ ! -f $stopfile ] ; do
+      php $dir/encode-local-worker.php id:$id 2>&1 >> $logdir/encode-local-worker.$id
+    done &
+    let id=id+1
+	done
+}
+
+case "$1" in
+'start')
+  mkdir -p $logdir
+  chmod 0777 $logdir
+  rm -f $stopfile
+  runConvertWorkers $convertWorkers
+  runDownloadLocalWorkers $downloadLocalWorkers
+  runEncodeLocalWorkers $encodeLocalWorkers
+	;;
+'stop')
+  touch $stopfile
+	kill `ps ax | grep ConversionServer | grep worker | cut -b 1-5`
+	;;
+'status')
+	ps ax | grep ConversionServer | grep worker
+	;;
+'restart')
+  $0 stop
+  $0 start
+  ;;
+*)
+	echo "Usage: $0 { start | stop | restart | status }"
+	;;
+esac
+exit 0

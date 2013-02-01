@@ -1,0 +1,18 @@
+{% extends "include/layout.twig" %}
+
+{% block title %}Top Videos{% endblock %}
+
+{% block content %}
+  <h1 class="pageTitle">Top Videos</h1>
+
+  {% for item in top %}
+    {% include "include/stats-result.twig" %}
+    {% if not loop.last %}
+      <div class="statsSeparator"></div>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
+
+{% block footerNavTop %}
+<span class="location">Top</span>
+{% endblock %}

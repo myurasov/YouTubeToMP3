@@ -1,0 +1,17 @@
+AddDefaultCharset UTF-8
+DirectoryIndex /front-controller.php?_controller=ToMP3\Controller\Index#
+
+RewriteEngine On
+
+# API
+RewriteRule ^api/(.*?)(?:/(.*?))?/?$ /front-controller.php?_renderer=ymF\\Response\\Renderer\\JSONRenderer&_controller=ToMP3\\Controller\\API\\$1&_method=$2&%{QUERY_STRING} [L]
+
+# Download audio file
+RewriteRule ^download/(.*?)/?$ /front-controller.php?_controller=ToMP3\\ConversionServer\\Controller\\Download&_renderer=ymF\\Response\\Renderer\\NullRenderer&token=$1&%{QUERY_STRING} [L]
+
+# Pages
+RewriteRule ^top/?$ /front-controller.php?_controller=ToMP3\\Controller\\Top&%{QUERY_STRING} [L,NC]
+RewriteRule ^recent/?$ /front-controller.php?_controller=ToMP3\\Controller\\Recent&%{QUERY_STRING} [L,NC]
+RewriteRule ^terms/?$ /front-controller.php?_controller=ToMP3\\Controller\\Terms&%{QUERY_STRING} [L,NC]
+RewriteRule ^forum/?$ /front-controller.php?_controller=ToMP3\\Controller\\Forum&%{QUERY_STRING} [L,NC]
+RewriteRule ^redirect/(.*?)/?$ /front-controller.php?_controller=ToMP3\\Controller\\Redirect&_renderer=ymF\\Response\\Renderer\\NullRenderer&urlBase64=$1&%{QUERY_STRING} [L,NC]

@@ -1,0 +1,37 @@
+<table border="0" cellpadding="0" cellspacing="0" align="center" class="conversionResult withNumber">
+  <tr>
+    <td rowspan="3" class="number">{{ loop.index }}</td>
+    <td class="thumbnail" rowspan="3">
+      <div>
+        <div class="top"><img src="/images/pixel.gif" alt=""></div>
+        <div class="content">
+          <a href="/redirect/{{ item.sourceUrlBase64 }}">
+            <img src="{{ item.thumbnailUrl }}" alt="{{ item.title }}" title="{{ item.title }}" class="thumbnailImg" width="120" height="90">
+          </a>
+        </div>
+        <div class="bottom"><img src="/images/pixel.gif" alt=""></div>
+      </div>
+    </td>
+    <td class="titleParent">
+      <div class="title">
+        <a href="/redirect/{{ item.sourceUrlBase64 }}">{{ item.title }}</a>
+      </div>
+    </td>
+    <td class="info">
+      {{ item.author }}<br>
+      {{ item.duration }}
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="description">
+        <div>
+          {{ item.description }}
+        </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="status">
+      &nbsp;
+    </td>
+  </tr>
+</table>

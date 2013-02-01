@@ -1,0 +1,91 @@
+{% extends "include/layout.twig" %}
+
+{% block content %}
+<div id="contentPages">
+  
+  <div id="page1" class="contentPage">
+    <table id="tableMainForm" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td class="cellBullet1"><img src="/images/pixel.gif" alt=""></td>
+        <td class="cellField1">
+          <div class="title">Enter the URL of the video on YouTube:</div>
+          {% include 'include/rounded-frame-start.twig' %}
+          <input type="text" id="inputUrl" class="inputText">
+          {% include 'include/rounded-frame-end.twig' %}
+          <div class="comment">
+            For example:
+            <span class="example" onclick="tomp3org.insertUrl(this)">http://www.youtube.com/watch?v=sTSA_sWGM44</span>
+          </div>
+        </td>
+      </tr>
+      <tr><td class="cellSeparator" colspan="2"><img src="/images/pixel.gif" alt=""></td></tr>
+      <tr>
+        <td class="cellBullet2"><img src="/images/pixel.gif" alt=""></td>
+        <td class="cellField2">
+
+          <div class="title">Select sound quality:</div>
+
+          <div id="selectQuality" class="std">
+            <span id="selectQualityA" onmousedown="tomp3org.switchQuality('low')"><span>low</span></span>
+            <span id="selectQualityB" onmousedown="tomp3org.switchQuality('std')"><span>standard</span></span>
+            <span id="selectQualityC" onmousedown="tomp3org.switchQuality('high')"><span>high</span></span>
+          </div>
+          
+          <div class="comment">High quality means larger MP3 files.<br>Not all videos contain high quality sound.</div>
+        </td>
+      </tr>
+      <tr><td class="cellSeparator" colspan="2"><img src="/images/pixel.gif" alt=""></td></tr>
+      <tr>
+        <td class="cellBullet3"><img src="/images/pixel.gif" alt=""></td>
+        <td class="cellField3">
+          <div id="buttonGo" class="button pressable" onclick="tomp3org.doConversion()"><span>Convert!</span></div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="page2" class="contentPage hidden">
+
+    {% include "include/conversion-result.twig" with {"id" : "conversionResult"} %}
+
+    <div class="resultOptions hidden" id="codeResultOptions">
+      <div class="title"><span class="text" onclick="javascript: tomp3org.toggleResultOptions('code')">Link</span></div>
+      <div class="content">
+        <div class="padder">
+          <table border="0" cellspacing="0" cellpadding="0" align="center">
+            <tr>
+              <td class="label">BB Code:</td>
+              <td class="field"><input type="text" id="codeFieldBbCode" class="codeField"></td>
+            </tr>
+            <tr>
+              <td class="label">HTML:</td>
+              <td class="field"><input type="text" id="codeFieldHtml"  class="codeField"></td>
+            </tr>
+            <tr>
+              <td class="label">Direct link:</td>
+              <td class="field"><input type="text" id="codeFieldDirect"  class="codeField"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="resultOptions hidden" id="shareResultOptions">
+      <div class="title"><span class="text" onclick="javascript: tomp3org.toggleResultOptions('share')">Share</span></div>
+      <div class="content">
+        <div class="padder" align="center">
+          {% include 'include/addthis-large.twig' %}
+        </div>
+      </div>
+    </div>
+
+    <div class="resultsOptionsPlaceholder hidden" id="resultsOptionsPlaceholder"></div>
+    <div align="center"><div id="buttonBack" class="button pressable disabled" onclick="if (!$(this).hasClass('disabled')) tomp3org.goBack()"><span>Back</span></div></div>
+  </div>
+  
+</div>
+{% endblock %}
+
+{% block footerNavHome %}
+  <span class="location">Home</span>
+{% endblock %}
